@@ -1,0 +1,26 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "This is simple NodeJS Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kettengeschwindigkeit/Junior-Frontednd-Developer-Profession-Backend-module.git"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "Andrey Perfilev <Kettengeschwindigkeit@mail.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kettengeschwindigkeit/Junior-Frontednd-Developer-Profession-Backend-module/issues"
+  },
+  "homepage": "https://github.com/Kettengeschwindigkeit/Junior-Frontednd-Developer-Profession-Backend-module#readme",
+  "dependencies": {
+    "yargs": "^17.6.2"
+  }
+}
