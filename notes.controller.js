@@ -40,10 +40,27 @@ async function removeNote(id) {
 async function updateNote(id, newTitle) {
     const notes = await getNotes()
     const index = notes.findIndex(note => note.id === id)
-    notes[index].title = newTitle
-    await fs.writeFile(notesPath, JSON.stringify(notes))
+
+    if (newTitle === '') {
+        notes[index].editMode = false
+        await fs.writeFile(notesPath, JSON.stringify(notes))
+    } else {
+        notes[index].title = newTitle
+        notes[index].editMode = false
+        await fs.writeFile(notesPath, JSON.stringify(notes))
+    }
+}
+
+async function getById(id) {
+    const notes = await getNotes()
+    const index = notes.findIndex(note => note.id === id)
+    const note = notes[index]
+    if (note) {
+        note.editMode = true
+        await fs.writeFile(notesPath, JSON.stringify(notes))
+    }
 }
 
 module.exports = {
-    addNote, getNotes, printNotes, removeNote, updateNote
+    addNote, getNotes, printNotes, removeNote, updateNote, getById
 }
